@@ -11,5 +11,7 @@ COPY . .
 RUN ionic build
 ## Run
 FROM nginx:alpine
+# Bind the port that the image will run on
+EXPOSE 8100
 #COPY www /usr/share/nginx/html
 COPY --from=ionic  /usr/src/app/www /usr/share/nginx/html
